@@ -1,0 +1,4 @@
+<?php
+
+$CONF['public_key']  = '';
+$CONF['private_key'] = '';
