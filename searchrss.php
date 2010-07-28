@@ -26,3 +26,8 @@ while($row = $stmt_srch->fetch(PDO::FETCH_ASSOC)){
 
 echo '</channel>';
 echo '</rss>';
+
+// set date
+$stmt_upd = $PDO->prepare('UPDATE search SET lastget = NOW() WHERE sid = ?');
+$stmt_upd->execute(array((int) $_REQUEST['sid']));
+

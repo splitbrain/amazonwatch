@@ -1,9 +1,9 @@
 CREATE TABLE IF NOT EXISTS search (
     sid INTEGER PRIMARY KEY,
-    dt DEFAULT CURRENT_TIMESTAMP,
+    added DEFAULT CURRENT_TIMESTAMP,
+    lastget DEFAULT CURRENT_TIMESTAP,
     region DEFAULT 'com',
-    query,
-    email
+    query
 );
 
 CREATE TABLE IF NOT EXISTS search_results (
@@ -19,4 +19,4 @@ CREATE TABLE IF NOT EXISTS search_results (
     PRIMARY KEY (sid, asin)
 );
 
-INSERT INTO search (query,email,region) VALUES ('Asus 1015','andi@splitbrain.org','de');
+INSERT INTO search (query,region) VALUES ('Asus 1015','de');
