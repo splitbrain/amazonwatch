@@ -1,0 +1,12 @@
+body {
+    font-family: sans-serif;
+}
+
+fieldset {
+    text-align: center;
+    line-height: 3em;
+}
+
+a {
+    color: #600;
+}

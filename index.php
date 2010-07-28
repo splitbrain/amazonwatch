@@ -5,6 +5,7 @@ header('Content-Type: text/html; charset=utf-8');
 <html>
 <head>
     <title>Amazon Watch</title>
+    <link rel="stylesheet" type="text/css" href="inc/style.css" />
 </head>
 <body>
 
