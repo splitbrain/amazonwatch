@@ -8,6 +8,11 @@ class Amazon {
     private $region = 'com';
     private $http;
 
+    public $partner = array(
+        'de'  => 'splitbrain-21',
+        'com' => 'splitbrain-20',
+    );
+
     function __construct($public,$private){
         $this->public_key  = $public;
         $this->private_key = $private;
@@ -25,6 +30,10 @@ class Amazon {
         $opts['Keywords']      = $query;
         $opts['SearchIndex']   = 'All';
         $opts['ResponseGroup'] = 'Medium';
+
+        if(isset($this->partner[$this->region])){
+            $opts['AssociateTag'] = $this->partner[$this->region];
+        }
 
         // support paged results
         $result = array();
