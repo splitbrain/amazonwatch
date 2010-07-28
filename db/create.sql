@@ -19,4 +19,3 @@ CREATE TABLE IF NOT EXISTS search_results (
     PRIMARY KEY (sid, asin)
 );
 
-INSERT INTO search (query,region) VALUES ('Asus 1015','de');

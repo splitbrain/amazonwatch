@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
-$PDO = new PDO('sqlite:database.sqlite');
+require_once(dirname(__FILE__).'/inc/init.php');
+
 $stmt_srch = $PDO->prepare('SELECT *, strftime(\'%s\',dt) as dt FROM search_results WHERE sid = ? ORDER BY dt DESC');
 $stmt_srch->execute(array((int) $_REQUEST['sid']));
 

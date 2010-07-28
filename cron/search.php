@@ -1,9 +1,7 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
-require_once('Amazon.php');
-require_once('config.php');
-
-$PDO = new PDO('sqlite:database.sqlite');
+require_once(dirname(__FILE__).'/../inc/init.php');
+require_once(BASE.'inc/HTTPClient.php');
+require_once(BASE.'inc/Amazon.php');
 $AMZ = new Amazon($CONF['public_key'],$CONF['private_key']);
 
 

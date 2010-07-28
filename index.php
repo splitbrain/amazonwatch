@@ -1,6 +1,5 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
-$PDO = new PDO('sqlite:database.sqlite');
+require_once(dirname(__FILE__).'/inc/init.php');
 header('Content-Type: text/html; charset=utf-8');
 ?>
 <html>

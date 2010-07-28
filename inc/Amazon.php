@@ -1,7 +1,5 @@
 <?php
 
-require_once('HTTPClient.php');
-
 class Amazon {
     private $public_key  = '';
     private $private_key = '';
