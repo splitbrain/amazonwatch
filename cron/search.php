@@ -25,11 +25,24 @@ while($row = $stmt_srch->fetch(PDO::FETCH_ASSOC)){
     $items = $AMZ->search($row['query']);
 
     foreach($items as $item){
+
+        $num = $item->OfferSummary->TotalNew +
+               $item->OfferSummary->TotalUsed +
+               $item->OfferSummary->TotalCollectible +
+               $item->OfferSummary->TotalRefurbished;
+        if(!$num) continue; // skip non available products
+
+        if($item->OfferSummary->LowestNewPrice->FormattedPrice){
+            $price = $item->OfferSummary->LowestNewPrice->FormattedPrice.' (new)';
+        }else{
+            $price = $item->OfferSummary->LowestUsedPrice->FormattedPrice.' (used)';
+        }
+
         $stmt_ins->execute(array(
             $row['sid'],
             $item->ASIN,
             $item->ItemAttributes->Title,
-            $item->OfferSummary->LowestNewPrice->FormattedPrice,
+            $price,
             $item->DetailPageURL,
             $item->MediumImage->URL,
             $item->EditorialReviews->EditorialReview->Content,
