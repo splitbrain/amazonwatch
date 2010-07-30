@@ -19,7 +19,6 @@ echo '<?xml version="1.0"?>';
 echo '<rss version="2.0">';
 echo '   <channel>';
 echo '      <title>'.htmlspecialchars($info['query']).' at Amazon.'.htmlspecialchars($info['region']).'</title>';
-echo '      <link>http://fixme/</link>';
 echo '      <description>Monitoring Amazon Product Availability</description>';
 
 $stmt_srch = $PDO->prepare(
@@ -44,6 +43,6 @@ echo '</channel>';
 echo '</rss>';
 
 // set date
-$stmt_upd = $PDO->prepare('UPDATE search SET lastget = NOW() WHERE sid = ?');
+$stmt_upd = $PDO->prepare('UPDATE search SET lastget = datetime(\'now\') WHERE sid = ?');
 $stmt_upd->execute(array((int) $_REQUEST['sid']));
 
