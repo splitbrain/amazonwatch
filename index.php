@@ -21,6 +21,7 @@ header('Content-Type: text/html; charset=utf-8');
             <option value="de">Amazon.de</option>
             <option value="co.uk">Amazon.co.uk</option>
             <option value="fr">Amazon.fr</option>
+            <option value="jp">Amazon.jp</option>
         </select>.<br />
 
         <input type="submit" value="Create Monitor Feed" />
